@@ -1,0 +1,27 @@
+spring:
+  profiles:
+    active: prod
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+---
+spring:
+  profiles: dev
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/postgres"
+    username: "postgres"
+    password: "postgres"
+---
+spring:
+  profiles: prod
+  datasource:
+    url: "jdbc:postgresql://178.62.116.170:5432/postgres"
+    username: "postgres"
+    password: "dopass123"
